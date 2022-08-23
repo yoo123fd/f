@@ -6,4 +6,8 @@ do
     GrapherSection:AddToggle("Enabled", {flag = "Grapher_Enabled"}, function() end)
 end
 
+function Grapher:C()
+    
+end
+
 return Grapher 
