@@ -115,9 +115,9 @@ function Mags:Mag(Football)
             end
         end
 
-        table.insert(Connections, game:GetService("RunService").RenderStepped:Conect(BallUpdate))
-        table.insert(Connections, game:GetService("RunService").Stepped:Conect(BallUpdate))
-        table.insert(Connections, game:GetService("RunService").Heartbeat:Conect(BallUpdate))
+        table.insert(Connections, game:GetService("RunService").RenderStepped:Connect(BallUpdate))
+        table.insert(Connections, game:GetService("RunService").Stepped:Connect(BallUpdate))
+        table.insert(Connections, game:GetService("RunService").Heartbeat:Connect(BallUpdate))
     end
 end
 
