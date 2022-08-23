@@ -1,10 +1,10 @@
 warn("Is this running?")
-getgenv().Variables = {
-    Players = game:GetService("Players"),
-    ReplicatedStorage = game:GetService("ReplicatedStorage"),
-    Client = Players.LocalPlayer,
-    Character = Players.LocalPlayer.Client.Character or Players.LocalPlayer.CharacterAdded:Wait()
-}
+getgenv().Variables = {}
+
+Variables.Players = game:GetService("Players")
+Variables.ReplicatedStorage = game:GetService("ReplicatedStorage")
+Variables.Client = Variables.Players.LocalPlayer
+Variables.Character = Variables.Client.Character or Variables.Client.CharacterAdded:Wait()
 
 Variables.Client.CharacterAdded:Connect(function(Character)
     Variables.Character = Character 
