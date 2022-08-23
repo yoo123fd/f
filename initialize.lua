@@ -1,5 +1,4 @@
 
---[[
 getgenv().Variables = {}
 
 Variables.Players = game:GetService("Players")
@@ -39,6 +38,5 @@ Variables.Grapher = loadstring(game:HttpGet("https://raw.githubusercontent.com/y
 Variables.Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Kicking/Aimbot.lua"))()
 Variables.Boost = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/Boost.lua"))()
 Variables.DynamicJump = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/DynamicJump.lua"))()
---]]
 
-rconsoleprint("naw does this wrk?")
+
