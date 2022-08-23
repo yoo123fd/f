@@ -9,4 +9,23 @@ Variables.Client.CharacterAdded:Connect(function(Character)
     Variables.Character = Character 
 end)
 
-local success
+Variables.Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/UI-Libraries/main/Vynixius/Source.lua"))()
+Variables.Window = Library:AddWindow({
+    title = {
+        "tobiware",
+        "Football Fusion 2"
+    },
+    default = true,
+    theme = {
+        Accent = Color3.fromRGB(255, 128, 0),
+		TopbarColor = Color3.fromRGB(20, 20, 20),
+		SidebarColor = Color3.fromRGB(15, 15, 15),
+		BackgroundColor = Color3.fromRGB(10, 10, 10),
+		SectionColor = Color3.fromRGB(20, 20, 20),
+		TextColor = Color3.fromRGB(255, 255, 255),
+		Objects = {},
+    }
+})
+
+Variables.CatchingTab = Variables.Window:AddTab("Catching")
+Variables.Physics = Variables.Window:AddTab("Physics")
