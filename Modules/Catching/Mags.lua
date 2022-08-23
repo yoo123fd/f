@@ -2,6 +2,7 @@ local Mags = {}
 
 --// UI Setup
 do
+    warn("setting up ui")
     local LastChanged = 0
 
     local MagSection = Variables.CatchingTab:AddSection("Mags")
