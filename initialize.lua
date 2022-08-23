@@ -1,4 +1,3 @@
-warn("Is this running?")
 getgenv().Variables = {}
 
 Variables.Players = game:GetService("Players")
@@ -31,7 +30,6 @@ Variables.Window = Variables.Library:AddWindow({
 Variables.CatchingTab = Variables.Window:AddTab("Catching")
 Variables.Physics = Variables.Window:AddTab("Physics") 
 Variables.Kicking = Variables.Window:AddTab("Kicking")
-warn("Okay!")
 -- // Bootup
 
 Variables.Mags = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Catching/Mags.lua"))()
@@ -39,4 +37,3 @@ Variables.Grapher = loadstring(game:HttpGet("https://raw.githubusercontent.com/y
 Variables.Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Kicking/Aimbot.lua"))()
 Variables.Boost = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/Boost.lua"))()
 Variables.DynamicJump = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/DynamicJump.lua"))()
-warn("G!")
