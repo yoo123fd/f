@@ -1,3 +1,4 @@
+warn("Is this running?")
 getgenv().Variables = {
     Players = game:GetService("Players"),
     ReplicatedStorage = game:GetService("ReplicatedStorage"),
@@ -10,7 +11,7 @@ Variables.Client.CharacterAdded:Connect(function(Character)
 end)
 
 Variables.Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/UI-Libraries/main/Vynixius/Source.lua"))()
-Variables.Window = Library:AddWindow({
+Variables.Window = Variables.Library:AddWindow({
     title = {
         "tobiware",
         "Football Fusion 2"
@@ -30,7 +31,7 @@ Variables.Window = Library:AddWindow({
 Variables.CatchingTab = Variables.Window:AddTab("Catching")
 Variables.Physics = Variables.Window:AddTab("Physics") 
 Variables.Kicking = Variables.Window:AddTab("Kicking")
-
+warn("Okay!")
 -- // Bootup
 
 Variables.Mags = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Catching/Mags.lua"))()
@@ -38,3 +39,4 @@ Variables.Grapher = loadstring(game:HttpGet("https://raw.githubusercontent.com/y
 Variables.Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Kicking/Aimbot.lua"))()
 Variables.Boost = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/Boost.lua"))()
 Variables.DynamicJump = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/DynamicJump.lua"))()
+warn("G!")
