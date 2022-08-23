@@ -1,5 +1,3 @@
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 getgenv().Variables = {
     Players = game:GetService("Players"),
     ReplicatedStorage = game:GetService("ReplicatedStorage"),
@@ -10,6 +8,5 @@ getgenv().Variables = {
 Variables.Client.CharacterAdded:Connect(function(Character)
     Variables.Character = Character 
 end)
-
 
 local success
