@@ -40,7 +40,8 @@ local ScreenGui = UI.Create("ScreenGui", {
 	Name = "Vynixius UI Library",
 	ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
 })
-ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.Parent = Player.PlayerGui 
+ScreenGui.ResetOnSpawn = false
 
 -- Functions
 
