@@ -3,6 +3,7 @@ getgenv().Variables = {}
 
 Variables.Players = game:GetService("Players")
 Variables.ReplicatedStorage = game:GetService("ReplicatedStorage")
+Variables.UserInputService = game:GetService("UserInputService")
 Variables.Client = Variables.Players.LocalPlayer
 Variables.Character = Variables.Client.Character or Variables.Client.CharacterAdded:Wait()
 
