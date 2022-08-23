@@ -7,6 +7,4 @@ do
     MagSection:AddSlider("Distance", 1, 40, 8, {flag = "Mags_Distance"}, function() end) 
 end
 
-
-
 return Mags 
