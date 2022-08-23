@@ -10,7 +10,10 @@ do
 
     local MagSection = Variables.CatchingTab:AddSection("Mags")
     local place0 = MagSection:AddToggle("Enabled", {flag = "Mags_Enabled"}, function() end)
-    DistanceSlider = MagSection:AddSlider("Distance", 1, 40, 8, {flag = "Mags_Distance"}, function() end) 
+    getgenv().Variables.MagDistance = 8
+    DistanceSlider = MagSection:AddSlider("Distance", 1, 40, 8, {flag = "Mags_Distance"}, function() 
+        getgenv().Variables.MagDistance = DistanceSlider.Value
+    end) 
     local place = MagSection:AddBind("Toggle key", Enum.KeyCode.Q, {flag = "Mags_ToggleKey"}, function() 
         LastChanged = tick()
     end)
