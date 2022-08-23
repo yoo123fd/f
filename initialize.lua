@@ -28,4 +28,7 @@ Variables.Window = Library:AddWindow({
 })
 
 Variables.CatchingTab = Variables.Window:AddTab("Catching")
-Variables.Physics = Variables.Window:AddTab("Physics")
+Variables.Physics = Variables.Window:AddTab("Physics") 
+
+-- // Bootup
+
