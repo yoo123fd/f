@@ -1,4 +1,3 @@
-local UserInputService = game:GetService("UserInputService")
 local Mags = {}
 
 --// UI Setup
@@ -12,7 +11,7 @@ do
         LastChanged = tick()
     end)
 
-    UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    Variables.UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
         if not gameProcessedEvent then
             if input.KeyCode == place.Bind and tick() - LastChanged >= .3 then
                 place0:Set(not Variables.CatchingTab.Flags["Mags_Enabled"], false)
