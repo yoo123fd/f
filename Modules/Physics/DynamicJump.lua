@@ -1,0 +1,3 @@
+local DynamicJump = {}
+
+return DynamicJump

@@ -1,0 +1,3 @@
+local Boost = {}
+
+return Boost

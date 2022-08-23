@@ -1,0 +1,3 @@
+local Aimbot = {}
+
+return Aimbot
