@@ -22,6 +22,7 @@ function Tracer:AttachBall(Ball)
             TextLabel.Transparency = 1
             TextLabel.Visible = false 
             TextLabel.Color = Color3.fromRGB(255, 0, 0)
+            TextLabel.Size = 25
 
             local con; con = game:GetService("RunService").RenderStepped:Connect(function()
                 if RootPart.Parent ~= nil and Ball.Parent ~= nil then
@@ -35,7 +36,7 @@ function Tracer:AttachBall(Ball)
                         Tracer.Visible = true 
                         TextLabel.Visible = true 
 
-                        TextLabel.Text = tostring(Distance) .. " studs away"
+                        TextLabel.Text = tostring(math.round(Distance)) .. " studs away"
                         TextLabel.Position = Vector2.new(Vector.X, Vector.Y)
                         
                         if Distance <= Variables.MagDistance then
