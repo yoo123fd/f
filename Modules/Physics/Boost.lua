@@ -32,7 +32,7 @@ do
     game:GetService("RunService").RenderStepped:Connect(function()
         for _, Player in ipairs(Variables.Players:GetPlayers()) do
             if Player ~= Variables.Client and Player.Character then
-                if Player.Character:FindFirstChild("Head") and not Player.Character:FindFirstChild("ClonedHead") then
+                if Player.Character:FindFirstChild("Head") and not Player.Character:FindFirstChild("CloneHead") then
                     Player.Character:FindFirstChild("Head").CanCollide = false 
 
                     local ClonedHead = Player.Character:FindFirstChild("Head"):Clone()
@@ -48,7 +48,7 @@ do
                     local Weld = Instance.new("Weld", ClonedHead)
                     Weld.Part0 = Player.Character:FindFirstChild("Head")
                     Weld.Part1 = ClonedHead   
-                elseif Player.Character:FindFirstChild("ClonedHead") then
+                elseif Player.Character:FindFirstChild("CloneHead") then
                     Player.Character:FindFirstChild("Head").CanCollide = false
                     local ClonedHead = Player.Character:FindFirstChild("CloneHead")
                     ClonedHead.CFrame = Player.Character:FindFirstChild("Head").CFrame
