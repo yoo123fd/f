@@ -48,7 +48,7 @@ do
                     local Weld = Instance.new("Weld", ClonedHead)
                     Weld.Part0 = Player.Character:FindFirstChild("Head")
                     Weld.Part1 = ClonedHead   
-                elseif Player.Character:FindFirstChild("ClonedHead")
+                elseif Player.Character:FindFirstChild("ClonedHead") then
                     Player.Character:FindFirstChild("Head").CanCollide = false
                     local ClonedHead = Player.Character:FindFirstChild("CloneHead")
                     ClonedHead.CFrame = Player.Character:FindFirstChild("Head").CFrame
