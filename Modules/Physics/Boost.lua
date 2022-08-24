@@ -62,7 +62,7 @@ do
                             NewParams.FilterDescendantsInstances = {Variables.Character, Player.Character}    
                             
                             local Raycast = workspace:Raycast(Variables.Character.PrimaryPart.Position, Vector3.new(0, -10, 0), NewParams)
-                            if Raycast and not Raycast.Instance.Parent:FindFirstChildOfClass("Humanoid") and not Raycast.Instance.Parent.Parent:FindFirstChildOfClass("Humanoid") then
+                            if Raycast and not Raycast.Instance.Parent:FindFirstChildOfClass("Humanoid") and not Raycast.Instance.Parent.Parent:FindFirstChildOfClass("Humanoid") or Variables.Character:FindFirstChildOfClass("Tool")  then
                                 ClonedHead.CanCollide = false
                             else
                                 if Variables.Character.Head.Position.Y > (Player.Character.Head.Position.Y + 1) then
