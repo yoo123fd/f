@@ -73,6 +73,10 @@ do
                     else
                         ClonedHead.CanCollide = false
                     end
+
+                    PhysicsService:SetPartCollisionGroup( Player.Character:FindFirstChild("Head"), "Heads")
+                    PhysicsService:SetPartCollisionGroup(ClonedHead, "Heads")
+                    PhysicsService:CollisionGroupSetCollidable("Heads", "Heads", false)  
                 end               
             end
         end 
