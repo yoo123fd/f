@@ -4,7 +4,7 @@ local PowerSlider;
 do
     local DynamicSection = Variables.Physics:AddSection("Dynamic Jump")
     local place0 = DynamicSection:AddToggle("Enabled", {flag = "Dynamic_Enabled"}, function() end)
-    PowerSlider = DynamicSection:AddSlider("Minimum", 1, 40, 8, {flag = "Dynamic_Minimum"}, function() end) 
+    PowerSlider = DynamicSection:AddSlider("Minimum", 50, 100, 50, {flag = "Dynamic_Minimum"}, function() end) 
 end
 
 
