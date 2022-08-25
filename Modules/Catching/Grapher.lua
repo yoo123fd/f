@@ -92,8 +92,9 @@ do
                     end 
 
                     Grapher:GetLanding(Variables.Character:FindFirstChild("Head").Position, ((Variables.Client:GetMouse().Hit.Position - Variables.Character:FindFirstChild("Head").Position).Unit * Grapher.LastSavedPower))
-                    task.wait()
+                    task.wait(.2)
                     Grapher:WipeMarkers()
+                    task.wait()
                 end
                 end
             end)
