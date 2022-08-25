@@ -19,6 +19,8 @@ Grapher.Params.FilterType = Enum.RaycastFilterType.Whitelist
 
 Grapher.CastStep = 3 / 60
 
+Grapher.LastSavedPower = 60
+
 function Grapher:GetCollidables()
     local Collidables = {}
     
@@ -42,10 +44,14 @@ function Grapher:GetLanding(origin, velocity, c)
     
     self.Params.FilterDescendantsInstances = self:GetCollidables()
     
-    local Football_Highlight = Instance.new("Highlight", game.CoreGui)
-    Football_Highlight.Adornee = c 
-    Football_Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-    Football_Highlight.Enabled = true 
+    local Football_Highlight;
+
+    if c then
+        Football_Highlight = Instance.new("Highlight", game.CoreGui)
+        Football_Highlight.Adornee = c 
+        Football_Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        Football_Highlight.Enabled = true  
+    end
 
     while true do
         Elapsed += Grapher.CastStep
@@ -53,7 +59,7 @@ function Grapher:GetLanding(origin, velocity, c)
         local nPos = origin + velocity * Elapsed - Vector3.new(0, .5 * 28 * Elapsed ^ 2, 0)
         
         local Marker = self.Marker:Clone(); Marker.Parent = workspace; Marker.Position = nPos
-        if c.Parent ~= workspace or not c:FindFirstChildOfClass("BodyForce") then
+        if c and Football_Highlight and c.Parent ~= workspace or not c:FindFirstChildOfClass("BodyForce") then
             Football_Highlight:Destroy()
             self:WipeMarkers()
             break
@@ -72,6 +78,27 @@ do
             end)
         end
     end)     
+
+    Variables.Client.PlayerGui.ChildAdded:Connect(function(child)
+        if child.Name == "BallGui" then
+            task.spawn(function()
+                while true do
+                    if child.Parent ~= Variables.Client.PlayerGui then break end 
+                    local Frame = child:FindFirstChild("Frame")
+                    local Display = Frame and Frame:FindFirstChild("Disp")
+                    local Power = Display and tonumber(Display.Text)
+                    if Power ~= nil then
+                        Grapher.LastSavedPower = Power
+                    end 
+
+                    Grapher:GetLanding(Variables.Character:FindFirstChild("Head").Position, ((Variables.Client:GetMouse().Hit.Position - Variables.Character:FindFirstChild("Head").Position).Unit * Grapher.LastSavedPower))
+                    task.wait()
+                    Grapher:WipeMarkers()
+                end
+            end)
+        end
+    end)
 end
+
 
 return Grapher 
