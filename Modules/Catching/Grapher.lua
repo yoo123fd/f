@@ -82,7 +82,7 @@ do
     Variables.Client.PlayerGui.ChildAdded:Connect(function(child)
         if child.Name == "BallGui" then
             task.spawn(function()
-                while true do
+                while true do if Variables.CatchingTab.Flags["Grapher_Enabled"] then
                     if child.Parent ~= Variables.Client.PlayerGui then break end 
                     local Frame = child:FindFirstChild("Frame")
                     local Display = Frame and Frame:FindFirstChild("Disp")
@@ -94,6 +94,7 @@ do
                     Grapher:GetLanding(Variables.Character:FindFirstChild("Head").Position, ((Variables.Client:GetMouse().Hit.Position - Variables.Character:FindFirstChild("Head").Position).Unit * Grapher.LastSavedPower))
                     task.wait()
                     Grapher:WipeMarkers()
+                end
                 end
             end)
         end
