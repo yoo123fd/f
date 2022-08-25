@@ -59,7 +59,7 @@ function Grapher:GetLanding(origin, velocity, c)
         local nPos = origin + velocity * Elapsed - Vector3.new(0, .5 * 28 * Elapsed ^ 2, 0)
         
         local Marker = self.Marker:Clone(); Marker.Parent = workspace; Marker.Position = nPos
-        if c and Football_Highlight and c.Parent ~= workspace or not c:FindFirstChildOfClass("BodyForce") then
+        if c and Football_Highlight and c.Parent ~= workspace or c and not c:FindFirstChildOfClass("BodyForce") then
             Football_Highlight:Destroy()
             self:WipeMarkers()
             break
