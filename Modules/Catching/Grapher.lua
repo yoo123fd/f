@@ -79,6 +79,7 @@ do
         end
     end)     
 
+    --[[
     Variables.Client.PlayerGui.ChildAdded:Connect(function(child)
         if child.Name == "BallGui" then
             task.spawn(function()
@@ -100,6 +101,7 @@ do
             end)
         end
     end)
+    --]]
 end
 
 
