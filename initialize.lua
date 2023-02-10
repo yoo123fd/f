@@ -1,6 +1,7 @@
 
 getgenv().Variables = {}
 
+Variables.State = "undefined";
 Variables.Players = game:GetService("Players")
 Variables.ReplicatedStorage = game:GetService("ReplicatedStorage")
 Variables.UserInputService = game:GetService("UserInputService")
@@ -41,3 +42,12 @@ Variables.Boost = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo
 Variables.DynamicJump = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/DynamicJump.lua"))()
 Variables.Tracer = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Catching/Tracer.lua"))()
 
+local old; old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
+    local args = {...};
+
+    if (args[2] == "swat" or args[2] == "catch ") and string.lower(getnamecallmethod()) == "fireserver" then
+        Variables.State = args[2] == "swat" and args[2] or "catch";
+    end
+
+    return old(self, ...);
+end))
