@@ -3,6 +3,7 @@ local Mags = {
 }
 
 --// UI Setup
+print("init");
 local MagToggle;
 local DistanceSlider;
 do
@@ -109,6 +110,7 @@ function Mags:Mag(Football)
             end 
 
             if Football and Football.Parent and Variables.State == "catch" then
+                warn("using catch mags");
                 Football.CanCollide = false 
                 firetouchinterest(Distance, Football, 0)
                 task.wait()
