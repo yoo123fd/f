@@ -108,7 +108,7 @@ function Mags:Mag(Football)
                 return
             end 
 
-            if Football and Football.Parent then
+            if Football and Football.Parent and Variables.State == "catch" then
                 Football.CanCollide = false 
                 firetouchinterest(Distance, Football, 0)
                 task.wait()
