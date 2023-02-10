@@ -31,6 +31,7 @@ Variables.Window = Variables.Library:AddWindow({
 })
 
 Variables.CatchingTab = Variables.Window:AddTab("Catching")
+Variables.SwattingTab = Variables.Window:AddTab("Swatting");
 Variables.Physics = Variables.Window:AddTab("Physics")
 Variables.Kicking = Variables.Window:AddTab("Kicking")
 -- // Bootup
