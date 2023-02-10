@@ -41,7 +41,7 @@ Variables.Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/yo
 Variables.Boost = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/Boost.lua"))()
 Variables.DynamicJump = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Physics/DynamicJump.lua"))()
 Variables.Tracer = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Catching/Tracer.lua"))()
-
+Variables.Swatting = loadstring(game:HttpGet("https://raw.githubusercontent.com/yoo123fd/f/master/Modules/Swatting/Mags.lua"))()
 local old; old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
     local args = {...};
 
