@@ -109,6 +109,7 @@ function Mags:Mag(Football)
             end 
 
             if Football and Football.Parent and Variables.State == "swat" then
+                warn("using swat mags");
                 Football.CanCollide = false 
                 firetouchinterest(Distance, Football, 0)
                 task.wait()
