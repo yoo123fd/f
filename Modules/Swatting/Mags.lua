@@ -8,7 +8,7 @@ local DistanceSlider;
 do
     local LastChanged = 0
 
-    local SwatSection = Variables.CatchingTab:AddSection("Swats")
+    local SwatSection = Variables.SwattingTab:AddSection("Swats")
     local place0 = SwatSection:AddToggle("Enabled", {flag = "Swat_Enabled"}, function() end)
     getgenv().Variables.SwatDistance = 8
     DistanceSlider = SwatSection:AddSlider("Distance", 1, 40, 8, {flag = "Swat_Distance"}, function() 
